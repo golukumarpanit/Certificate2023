@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}       
+/* Common CSS styles for both previews */
+.preview-container {
+    display: flex;
+    justify-content: left;
+    margin: left;
+    width: 100%;
+    height: 100%; 
+    
+}
+.first-page{
+    width: 600px;
+    height: 750px;
+    margin: 20px;
+    margin-top: 10px;
+    justify-items: center;  
+    align-items: center; 
+    background-color: white;  
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 10);  
+    
+}
+.certificateData{
+    display: flex;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 35px;
+    align-items: center;
+}
+.preview {   
+    width: 95%;
+    margin-top: 10px;
+    justify-items: center;
+    
+}
+.preview:first-child {
+    margin-right: 0;
+    flex: 0 0 60%; /* 60% width for the first preview */
+}
+
+.form-container {
+    height: 400px;
+    width: 550px;
+    max-width: 550px;
+    background-color: white;
+    border: solid 1PT rgb(187, 180, 180);
+    border-radius:  5px;
+    box-shadow: #45a049 2px 2px 2px 2px ;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+#textInputForm{
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+    margin: 0;
+    margin-top: 20px;
+}
+.professorkamalkatha{
+    display: flex;
+    margin: 0px;
+    width: 530px;
+    justify-content: center;
+    justify-items: center;
+}
+.Professornamefather{
+    width: 100%;
+    margin: 2px;
+    margin-bottom: 10px;
+}
+.ekmedekhanahai1{
+    margin: 2px;
+}
+.previewgopal {
+margin-top: 20px;
+margin-left: 25px;
+border: 5px solid #ccc;
+padding: 15px;
+width: 175px;
+height: 175px;
+}
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-left: 0px;
+}
+
+label {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+input[type="text"],
+select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 3px;
+    margin-bottom: 1px;
+    border: 1px solid #beb6b6;    
+    box-sizing: border-box;
+
+}
+.Professorphotolenahai{
+    width: 100%;
+    border: solid rgb(185, 181, 181) 0.1px;
+    border-radius: 3px;
+    margin: 2px;
+    margin-bottom: 10px;
+    
+}
+.Professorbutton{
+    display: flex;
+    width: 100%;
+    background-color: #dfb33b;
+    margin: 2px;
+}
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 2px;
+    border: solid rgb(224, 221, 221)1px;  
+    border-radius: 5px;
+    background-color: #e9b72e;
+    color: #fff;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+#uploadedImage {
+    max-width: 1200%;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+}       
+#cropperContainer {
+    margin-top: 0px;
+    height: 155px;
+    width: 140px;
+    margin-left: 60px; /* Set your desired height here */
+    overflow: hidden;
+}
+#qrcode {
+padding: 0;
+margin: 0;
+}
+#qrcode img {
+width: 140px;
+height: 140px;
+margin: 0;
+padding: 0;
+margin-left: 55px;
+}
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    /* Hide the first page */
+    .first-page {
+        display: none;
+    }
+    /* Ensure the second page starts on a new page */
+    .second-page {
+        display: block;
+        max-height: fit-content;
+        width: 100%;
+        height: 100%;
+    }
+}

@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024">
+    <title>rollNoInput</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Noto+Serif+Devanagari:wght@200&family=Poppins:wght@200&family=Rubik+Vinyl&family=Zen+Dots&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;700;900&display=swap">
+    <link rel="stylesheet" href="https://www.gcsm.net.in/assets/tmp-assets/css/certificate.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINAL_TOUCH</title>
+    <link href="https://cdn.jsdelivr.net/npm/cropperjs/dist/cropper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="javascript.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>   
+
+</head>
+</html>
+<body>   
+    <div class="preview-container">
+        <div class="first-page">        
+            <div class="preview" id="preview1"> 
+                  <h3 class="certificateData" style="text-align: center">Certificate Data</h3>
+                        <div class="form-container">                       
+                            <img id="previewImage" src="#" alt="Preview Image">                       
+                        </div>
+                    <!--yaha tak hai ye code-->
+                <form id="textInputForm">
+                    <!-- yahitinoekmehai -->
+                    <div class="professorkamalkatha">
+                        <div class="ekmedekhanahai1"> 
+                            <label for="rollinput">Roll Number:</label>
+                            <input type="text" id="rollinput" name="rollinput" oninput="generateQRCode()">  
+                        </div> 
+                        <div class="ekmedekhanahai1"> 
+                            <label for="rollinput">Roll Number:</label>
+                            <input type="text" id="rollinput" name="rollinput" oninput="generateQRCode()">  
+                        </div> 
+                         
+                        <div class="ekmedekhanahai1">
+                            <label for="dobInput">DOB(DD-MM-YY):</label>
+                            <input type="text" id="dobInput" name="dobInput" oninput="generateQRCode()">
+                        </div>
+                    </div>           
+                    <!-- name and father name  -->
+                    <div class="professorkamalkatha">
+                            <div class="Professornamefather">         
+                                <label for="nameInput">NAME:</label>
+                                <input type="text" id="nameInput" name="nameInput" oninput="generateQRCode()">
+                            </div>   
+                    
+                            <div class="Professornamefather">
+                                <label for="fatherNameInput">FATHER'S NAME:</label>
+                                <input type="text" id="fatherNameInput" name="fatherNameInput" oninput="generateQRCode()">
+                            </div>
+                    
+                    </div>  
+                    <div class="professorkamalkatha">
+                        
+                        <div class="Professorphotolenahai">
+                            <label for="imageInput">Upload Image:</label>
+                            <input type="file" id="imageInput" name="imageInput">                     
+                            <img id="uploadedImage" src="#" alt="Uploaded Image" style="display: none;">
+                    
+                        </div>                   
+                    </div>
+                    <!-- yaha se fourth section yaha hai -->
+                    <div class="professorkamalkatha">
+                        <div class="Professornamefather">
+                            <label for="courses">SELECT COURSE</label>  
+                            <select id="selectcode" name="ADCA" onchange="generateQRCode()">
+                                <option value="ADVANCE DIPLOMA IN COMPUTER APPLICATION">ADCA</option>
+                                <option value="DIPLOMA IN COMPUTER APPLICATION">DCA</option>
+                                <option value="TALLY PRIME4.1">TALLY</option>
+                            </select> 
+                        </div>
+                        <div class="Professornamefather">
+                            <label for="durationSelect">Duration:</label>
+                            <select id="durationSelect" name="durationSelect" onchange="generateQRCode()">
+                                <option value="TWELVE">TWELVE</option>
+                                <option value="SIX">SIX</option>
+                                <option value="THREE">THREE</option>
+                            </select>
+                        </div>
+                        <div class="Professornamefather">               
+                            <label for="examHeldOn">Exam Held On :</label>
+                            <select id="examHeldOn" name="examHeldOn" onchange="generateQRCode()">
+                                <option value="February 2023">February 2023</option>
+                                <option value="July 2023"> July 2023 </option>
+                                <option value="July 2022">July 2022</option>
+                                
+                                
+                            </select>
+                        </div> 
+                        <div class="Professornamefather">
+                            <label for="session">Session:</label>
+                            <select id="session" name="session" oninput="generateQRCode()">  
+                                <option value="12-07-2022">12-07-2022</option>                      
+                                <option value="21-02-2023">21-02-2023</option> 
+                                <option value="18-07-2023">21-02-2023</option>                       
+                                
+                            </select>
+                        </div>
+                                          
+                    </div>                        
+                    
+                            
+                            <div class="professorkamalkatha">
+                                <div class="Professorbutton">                             
+                                    <button onclick="rotateLeft()">Rotate Left</button>
+                                    <button onclick="rotateRight()">Rotate Right</button>
+                                </div>
+                            </div> 
+                            
+                                         
+                        <!-- KUCHNHI -->
+                    <!-- KUCHNHI -->
+                </form> 
+            </div>  
+        </div>
+    <!-- YABANDNHIHOGA NEXT PAGE KA   -->
+    <!-- Preview 2 -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=1024">
+        <title>Certificate - ADCA - 2022-012004A/ADC</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Noto+Serif+Devanagari:wght@200&family=Poppins:wght@200&family=Rubik+Vinyl&family=Zen+Dots&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;700;900&display=swap">
+        <link rel="stylesheet" href="https://www.gcsm.net.in/assets/tmp-assets/css/certificate.css">
+        <style>
+            @font-face {
+                font-family: Cambria;
+                src: url('https://www.gcsm.net.in/assets/tmp-assets/fonts/Cambria.ttf')
+            }
+            .c-body {
+                background-image: url('https://www.gcsm.net.in/assets/tmp-assets/images/bg.png');
+            }         
+           
+        </style>       
+    </head>
+    <body>
+    <!--<canvas id="canvas"></canvas>-->   
+<div class="second-page">
+    <div id="root">
+        <div class="App">
+            <div class="flex">
+                <div class="flex-initial w-fit">
+                    <div class="card font-bold bg-base-100 border-[6px] border-blue-950">
+                        <div class="card-body p-2">
+                            <div class="border-4 border-red-600 h-full p-2">
+                                <div class="border-4 border-yellow-400 h-full p-2">                                    
+                                    <div class="c-body border-2 border-blue-950 p-2 text-center">
+                                          <!--yaha se start ho rha hai -->  
+                                        <!-- <div class="ml-300">
+                                            <div class="flex pt-1 pb-1 text-left pag">                                                                                                                                           
+                                                <div class="ml-2 flex-initial f-font !text-lg w-fit text-left">ESTD 2015 </div>
+                                                <div class="ml-2 flex-initial f-font !text-lg w-fit text-right">ISO Certificate No :</div>
+                                                <p class="ml-2 normal-font border-b flex justify-center items-center font-bold uppercase border-black border-dotted">012004A/ADC</p>
+                                            </div>                                                                                                                                 
+                                        </div> -->
+                                                                                                                  
+                                        <!--yaha tak hi hai code hai -->         
+                                        <img src="https://www.gcsm.net.in/assets/tmp-assets/images/logo.png">
+                                        <div class="grid grid-cols-2 mt-4 mb-4 m-1">
+                                            
+                                            <div>
+                                                <img src="https://www.gcsm.net.in/assets/tmp-assets//images/banner.png">
+                                            </div>
+                                            <div class="ml-20">
+                                                <div class="flex pt-1 pb-1 text-left">
+                                                    <div class="flex-initial f-font !text-lg w-fit">Roll No :</div>
+                                                    <p class="normal-font ml-2 border-b flex justify-center items-center font-bold uppercase border-black border-dotted">012004A/ADC</p>
+                                                </div>
+                                                <div class="flex pt-1 pb-1 text-left">
+                                                    <div class="flex-initial f-font text-lg w-fit">Date Of Birth :</div>
+                                                    <p class="ml-2 text-lg f-font border-b border-black border-dotted">13-01-1996</p>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <div class="grid grid-cols-3">
+                                            <div>
+                                                <p id="qrc" class="text-xl uppercase ele">MS. No.: <span>18205</span></p>
+                                                <div id="qrcode"></div>
+                                                <!--
+                                                <img id="qr" class="m-auto" src="https://www.gcsm.net.in/assets/tmp-assets/images/qr.png">
+                                                -->
+                                                <p class="text-xl cert-body1 mt-2">of course completion</p>
+                                            </div>
+                                            <div>
+                                                <img class="m-auto h-44" src="https://www.gcsm.net.in/assets/tmp-assets/images/logo-circle.png">
+                                            </div>
+                                            <div class="justify-self-center pt-2">
+                                                <div class="w-28 border border-black ml-auto mr-auto h-32" id="cropperContainer">
+                                                <img id="croppedImage" src="#" alt="Cropped Image">
+                                            </div>
+                                            <p class="c-font text-2xl mt-4">Global Foundation</p>
+                                            </div>
+                                            </div>
+                                            <div class="mt-4 c-font font-extrabold text-xl">
+                                            <p>A Program Initiated by Global Foundation Regd. Under sec.</p>
+                                            <p> 21 Societies Act. 1860, Government Regd. No. 120/2015-16</p>
+                                            </div>                                     
+   
+                                            <div class="mt-2 !font-black cert-body pt-2">
+                                            <div class="flex pt-2 pb-3 text-left">
+                                                <div class="flex-initial w-fit">This Certificate is awarded to Mr./Ms</div>
+                                                <p class="normal-font ml-2 mr-2 flex font-normal justify-center uppercase items-center font-black font-bold border-b border-black border-dotted">Hello Krishna</p>
+                                            </div>
+                                            <!--yaha hai father name ka pathwaya yaha se code lena hai-->
+                                            <div class="flex pt-2 pb-2 text-left">
+                                                <div class="flex-initial w-fit">S/o, D/o.</div>
+                                                <p id="fatherName" class="ml-2 mr-2 normal-font border-b flex justify-center items-center border-black border-dotted"><span class="font-bold uppercase">Shree radha rani</span></p>
+                                                <div class="flex-initial w-fit">On Successful</div>
+                                            </div>
+                                            <!--yaha course update hona hai-->
+                                            <div class="flex pt-2 pb-2 text-left">
+                                                <div class="flex-initial w-fit">Completion of the course</div>
+                                                <p id="courseName" class="normal-font ml-2 flex justify-center items-center uppercase font-bold border-b border-black border-dotted">ADVANCE DIPLOMA IN COMPUTER APPLICATION</p>
+                                            </div>
+                                            <div class="flex pt-2 pb-2 text-left">
+                                                <div class="flex-initial w-fit">Of</div>
+                                                <p class="normal-font ml-2 mr-2 flex font-normal justify-center uppercase items-center border-b border-black border-dotted">G.C.S.M. LOHAR LANE, MUSALLAHPUR HATT, PATNA-06</p>
+                                            </div>
+                                            <!--yaha se code hai month ka jiska font change krna hai or nhi ho rha hai-->
+                                            <div id="durationText" class="flex pt-2 pb-2 text-left">
+                                                <div class="flex-initial w-fit">of Duration</div>
+                                                <p id="selectedDuration" class="normal-font ml-2 mr-2 flex justify-center uppercase items-center border-b border-black border-dotted"><span class="font-bold">shree ganeshay namah</span></p>
+                                                <div class="flex-initial w-fit">Month who</div>
+                                            </div>
+                                            <!-- iske uppar wala ke liye likha gya hai ye code-->
+                                            <div class="flex pt-2 pb-2 text-left">
+                                                <div class="flex-initial w-fit">has passed the examination held on</div>
+                                                <!-- jiska id hai exam display-->
+                                                <p id="examDisplay" class="ml-2 normal-font mr-2 flex justify-center items-center border-b border-black border-dotted"><span class="font-bold uppercase">February 2023</span></p>
+                                                <div class="flex-initial w-fit">and</div>                                                                                                           <!--isko hi change krna hai-->
+                                            </div>
+                                            <div class="flex pt-2 pb-2 text-left">
+                                                <div class="flex-initial w-fit">has procured the grade</div>
+                                                <p class="ml-2 mr-2 normal-font border-b flex justify-center items-center border-black border-dotted"><span class="font-bold uppercase">Excellent</span></p>
+                                            </div>
+                                        </div>    
+                                        <div class="grid mt-4 pb-10 pt-6 grid-cols-3">
+                                            <div>
+                                                <img class="w-40 ml-auto mr-auto mt-[-14px] mb-[-10px]" src="https://www.gcsm.net.in/assets/tmp-assets/images/center-head-sign.png">
+                                                <p class="ml-10 mr-10 pt-0 mt-0 c-sign border-b-c border-black"></p>
+                                                <p class="font-bold text-xl">Centre Head</p>
+                                            </div>
+                                            <!--yaha change krna hai jo data form se aa rha hai-->
+                                            <div>
+                                                <p id="codingaagya" class="ml-10 mr-10 border-b-c border-black text-lg !mt-[-4px]">20-20-2001</p>
+                                                <p class="font-bold text-xl">Date of Issue</p>
+                                            </div>
+                                            <!--session change ke bad autoupdate hona chahiye 21-02-2023 me-->
+                                            <div>
+                                                <img src="https://www.gcsm.net.in/assets/tmp-assets/images/center-stamp.png" class="w-44 z-10 ml-auto mr-auto !mb-[-70px] !mt-[-50px]">
+                                                <p class="ml-10 mr-10 z-0 border-b-c border-black !mt-[-90px]"></p>
+                                            </div>
+                                        </div>
+                                        <div class="c-footer text-left mt-4">
+                                            <p class="font-bold text-xl text-it"><span class="italic text-[red]">Head Office:- </span>Global foundation, Lohar Lane, Musallahpur Hat, Patna-06</p>
+                                            <p class="font-bold text-xl text-it"><span class="italic text-[red]">Branch Office:- </span><span id="addresschangehorhahai">G.T.C., Prof. Colony, Sahganj, Patna-06</span></p>
+                                            <div class="flex text-xl mt-1 text-blue-900 font-bold">
+                                                <p><b>Website: </b><a href="https://www.gcsm.net.in">www.gcsm.net.in</a></p>
+                                                <p class="ml-4"><b>E-mail: </b><a href="mailto:gcsmcomputereducation@gmail.com">gcsmcomputereducation@gmail.com</a></p>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://www.gcsm.net.in/assets/tmp-assets/js/qrcode.min.js" defer></script>
+<script src="https://www.gcsm.net.in/assets/tmp-assets/js/template.js" defer></script>
+<script>
+
+function generateQRCode() {
+var selectElement = document.getElementById("durationSelect"); // Get session dropdown element
+var selectedOption = selectElement.options[selectElement.selectedIndex].text;
+var imageUrl = document.getElementById('imageUrl').value; // Get input text for image URL
+var uploadedImage = document.getElementById('uploadedImage');
+var mankibat = document.getElementById('codingaagya');
+var sessionDropdown = document.getElementById('session'); // Get session dropdown element
+var addresscallkrrhehai = document.getElementById('addresschangehorhahai'); //yaha adress change ho rha hai/.
+
+
+
+    var msNoInput = document.getElementById('msNoInput').value; // Get input text for MS number
+    var rollNoInput = document.getElementById('rollinput').value; // Get input text for roll number
+    var nameInput = document.getElementById('nameInput').value; // Get input text for name
+    var fatherName = document.getElementById('fatherNameInput').value; // Get input text for father's name
+    var dobInput = document.getElementById('dobInput').value; // Get input text for date of birth
+    var examSelect = document.getElementById("examHeldOn"); // Get selected value for exam held on
+    var displayText = document.getElementById("examDisplay");
+    var select = document.getElementById('selectcode');
+    var courseName = document.getElementById('courseName');
+    courseName.textContent = select.options[select.selectedIndex].value;
+    var selectedCourse = select.value;
+
+            if (selectedCourse === 'ADVANCE DIPLOMA IN COMPUTER APPLICATION') {
+                durationSelect.value = 'TWELVE';
+            } else if (selectedCourse === 'DIPLOMA IN COMPUTER APPLICATION') {
+                durationSelect.value = 'SIX';
+            } else if (selectedCourse === 'TALLY PRIME4.1') {
+                durationSelect.value = 'THREE';
+            } else {
+                durationSelect.value = '';
+            }
+            
+    
+    // Update selected exam text
+    displayText.innerHTML = examSelect.options[examSelect.selectedIndex].text;
+    // Set font style for examDisplay
+    var fontStyles = "font-family: 'Times New Roman', Times, serif; font-size: 16px; font-weight: bold; text-transform: uppercase;"; // Modify as needed
+    displayText.setAttribute('style', fontStyles);
+
+    // Update text in the second preview for MS number, name, father's name, roll number, and date of birth
+    document.querySelector('.ele > span').innerText = msNoInput;
+    document.querySelector('.normal-font.ml-2.border-b.flex.justify-center.items-center.font-bold.uppercase.border-black.border-dotted').innerText = rollNoInput;
+    document.querySelector('.normal-font.ml-2.mr-2.flex.font-normal.justify-center.uppercase.items-center.border-b.border-black.border-dotted').innerText = nameInput;
+    document.getElementById('fatherName').querySelector('span').innerText = fatherName; // Update father's name
+    document.querySelector('.ml-2.text-lg.f-font.border-b.border-black.border-dotted').innerText = dobInput;
+    document.getElementById("selectedDuration").innerHTML = selectedOption;
+
+    // Set font style for father's name and selected duration
+    var commonFontStyles = "font-family: 'Times New Roman', Times, serif; font-size: 16px; font-weight: bold; text-transform: uppercase;";
+    document.getElementById('fatherName').setAttribute('style', commonFontStyles);
+    document.getElementById('selectedDuration').setAttribute('style', commonFontStyles);
+
+    // Automatically update session based on the selected exam held on date
+    if (examSelect.value === 'July 2022') {
+        sessionDropdown.value = '12-07-2022';
+        mankibat.innerText = '12-07-2022';
+    } else if (examSelect.value === 'February 2023') {
+        sessionDropdown.value = '21-02-2023';
+        mankibat.innerText = '21-02-2023';
+    
+    }else if (examSelect.value === 'July 2023') {
+        sessionDropdown.value = '18-07-2023';
+        mankibat.innerText = '18-07-2023';
+    
+    }
+    if (examSelect.value === "July 2023"){
+        addresschangehorhahai.innerText = "G.C.S.M. Near BOI Khanwan, Narhat, Nawada-805122";
+    } else if (examSelect.value === "July 2022") {
+        addresschangehorhahai.innerText = "G.T.C., Prof. Colony, Sahganj, Patna-06";
+    }
+    else if (examSelect.value === "February 2023") {
+        addresschangehorhahai.innerText = "G.T.C., Prof. Colony, Sahganj, Patna-06";
+    }
+}
+
+// Attach event listeners to input fields and select elements to generate QR code dynamically
+document.querySelectorAll('input, select').forEach(item => {
+    item.addEventListener('input', generateQRCode);
+});
+
+// Form submission event handler
+document.getElementById('textInputForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+    generateQRCode(); // Update QR code after form submission
+});
+
+</script>
+
+               
+<script src="https://cdn.jsdelivr.net/npm/cropperjs"></script>
+
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+<script>
+    // Initialize QR code instance
+    let qrcode = new QRCode(document.getElementById("qrcode"), {
+        width: 150,
+        height: 150,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+    // Function to update QR code
+    function updateQRCode() {
+    var qrData = "Roll Number: " + document.getElementById('rollinput').value + "\n" +
+                 "MS Number: " + document.getElementById('msNoInput').value + "\n" +
+                 "Name: " + document.getElementById('nameInput').value + "\n" +
+                 "Father's Name: " + document.getElementById('fatherNameInput').value + "\n" +
+                 "Date of Birth: " + document.getElementById('dobInput').value + "\n" +
+                 "Course: " + document.getElementById('selectcode').value + "\n" +
+                 "Duration: " + document.getElementById('durationSelect').value +" Month"+ "\n" +
+                 "Exam Held On: " + document.getElementById('examHeldOn').value + "\n" +
+                 "Session: " + document.getElementById('session').value;
+    qrcode.makeCode(qrData); // Update QR code with new data
+}
+
+// Attach event listeners to input fields to update QR code dynamically
+document.querySelectorAll('input, select').forEach(item => {
+    item.addEventListener('input', updateQRCode);
+});
+
+// Generate initial QR code
+updateQRCode();
+</script>
+</body>
+</html>
