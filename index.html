@@ -29,6 +29,7 @@
         <div class="first-page">        
             <div class="preview" id="preview1"> 
                   <h3 class="certificateData" style="text-align: center">Certificate Data</h3>
+                  <!-- yaha image preview ho rha hai-- -->
                         <div class="form-container">                       
                             <img id="previewImage" src="#" alt="Preview Image">                       
                         </div>
@@ -37,8 +38,8 @@
                     <!-- yahitinoekmehai -->
                     <div class="professorkamalkatha">
                         <div class="ekmedekhanahai1"> 
-                            <label for="rollinput">Roll Number:</label>
-                            <input type="text" id="rollinput" name="rollinput" oninput="generateQRCode()">  
+                            <label for="msNoInput">Ms Nub:</label>
+                            <input type="text" id="msNoInput" name="msNoInput" oninput="generateQRCode()">  
                         </div> 
                         <div class="ekmedekhanahai1"> 
                             <label for="rollinput">Roll Number:</label>
@@ -63,12 +64,12 @@
                             </div>
                     
                     </div>  
-                    <div class="professorkamalkatha">
-                        
+                    <!-- professor yaha se image ka id hai or leke jana hai -->
+                    <div class="professorkamalkatha">                        
                         <div class="Professorphotolenahai">
-                            <label for="imageInput">Upload Image:</label>
-                            <input type="file" id="imageInput" name="imageInput">                     
-                            <img id="uploadedImage" src="#" alt="Uploaded Image" style="display: none;">
+                            <input type="file" id="imageInput" accept="image/*" onchange="updatePreview()">
+                            <input type="text" id="imageUrl" placeholder="Enter image URL" oninput="updatePreview()">                 
+                            
                     
                         </div>                   
                     </div>
@@ -162,16 +163,7 @@
                         <div class="card-body p-2">
                             <div class="border-4 border-red-600 h-full p-2">
                                 <div class="border-4 border-yellow-400 h-full p-2">                                    
-                                    <div class="c-body border-2 border-blue-950 p-2 text-center">
-                                          <!--yaha se start ho rha hai -->  
-                                        <!-- <div class="ml-300">
-                                            <div class="flex pt-1 pb-1 text-left pag">                                                                                                                                           
-                                                <div class="ml-2 flex-initial f-font !text-lg w-fit text-left">ESTD 2015 </div>
-                                                <div class="ml-2 flex-initial f-font !text-lg w-fit text-right">ISO Certificate No :</div>
-                                                <p class="ml-2 normal-font border-b flex justify-center items-center font-bold uppercase border-black border-dotted">012004A/ADC</p>
-                                            </div>                                                                                                                                 
-                                        </div> -->
-                                                                                                                  
+                                    <div class="c-body border-2 border-blue-950 p-2 text-center">                                                                                                   
                                         <!--yaha tak hi hai code hai -->         
                                         <img src="https://www.gcsm.net.in/assets/tmp-assets/images/logo.png">
                                         <div class="grid grid-cols-2 mt-4 mb-4 m-1">
@@ -193,19 +185,18 @@
                                             <div class="grid grid-cols-3">
                                             <div>
                                                 <p id="qrc" class="text-xl uppercase ele">MS. No.: <span>18205</span></p>
-                                                <div id="qrcode"></div>
-                                                <!--
-                                                <img id="qr" class="m-auto" src="https://www.gcsm.net.in/assets/tmp-assets/images/qr.png">
-                                                -->
+                                                <div id="qrcode"></div>                                                
                                                 <p class="text-xl cert-body1 mt-2">of course completion</p>
                                             </div>
                                             <div>
                                                 <img class="m-auto h-44" src="https://www.gcsm.net.in/assets/tmp-assets/images/logo-circle.png">
                                             </div>
+                                            <!-- yaha mujhe imaged croped hone ke bad aaana chahiye -->
                                             <div class="justify-self-center pt-2">
                                                 <div class="w-28 border border-black ml-auto mr-auto h-32" id="cropperContainer">
-                                                <img id="croppedImage" src="#" alt="Cropped Image">
+                                                    <img id="croppedImage" src="https://m.media-amazon.com/images/I/51rgZ+CXraL._SY300_SX300_.jpg" alt="Cropped Image">
                                             </div>
+                                            <!-- yaha mujhe imaged croped hone ke bad aaana chahiye -->
                                             <p class="c-font text-2xl mt-4">Global Foundation</p>
                                             </div>
                                             </div>
@@ -291,93 +282,6 @@
 <script src="https://www.gcsm.net.in/assets/tmp-assets/js/template.js" defer></script>
 <script>
 
-function generateQRCode() {
-var selectElement = document.getElementById("durationSelect"); // Get session dropdown element
-var selectedOption = selectElement.options[selectElement.selectedIndex].text;
-var imageUrl = document.getElementById('imageUrl').value; // Get input text for image URL
-var uploadedImage = document.getElementById('uploadedImage');
-var mankibat = document.getElementById('codingaagya');
-var sessionDropdown = document.getElementById('session'); // Get session dropdown element
-var addresscallkrrhehai = document.getElementById('addresschangehorhahai'); //yaha adress change ho rha hai/.
-
-
-
-    var msNoInput = document.getElementById('msNoInput').value; // Get input text for MS number
-    var rollNoInput = document.getElementById('rollinput').value; // Get input text for roll number
-    var nameInput = document.getElementById('nameInput').value; // Get input text for name
-    var fatherName = document.getElementById('fatherNameInput').value; // Get input text for father's name
-    var dobInput = document.getElementById('dobInput').value; // Get input text for date of birth
-    var examSelect = document.getElementById("examHeldOn"); // Get selected value for exam held on
-    var displayText = document.getElementById("examDisplay");
-    var select = document.getElementById('selectcode');
-    var courseName = document.getElementById('courseName');
-    courseName.textContent = select.options[select.selectedIndex].value;
-    var selectedCourse = select.value;
-
-            if (selectedCourse === 'ADVANCE DIPLOMA IN COMPUTER APPLICATION') {
-                durationSelect.value = 'TWELVE';
-            } else if (selectedCourse === 'DIPLOMA IN COMPUTER APPLICATION') {
-                durationSelect.value = 'SIX';
-            } else if (selectedCourse === 'TALLY PRIME4.1') {
-                durationSelect.value = 'THREE';
-            } else {
-                durationSelect.value = '';
-            }
-            
-    
-    // Update selected exam text
-    displayText.innerHTML = examSelect.options[examSelect.selectedIndex].text;
-    // Set font style for examDisplay
-    var fontStyles = "font-family: 'Times New Roman', Times, serif; font-size: 16px; font-weight: bold; text-transform: uppercase;"; // Modify as needed
-    displayText.setAttribute('style', fontStyles);
-
-    // Update text in the second preview for MS number, name, father's name, roll number, and date of birth
-    document.querySelector('.ele > span').innerText = msNoInput;
-    document.querySelector('.normal-font.ml-2.border-b.flex.justify-center.items-center.font-bold.uppercase.border-black.border-dotted').innerText = rollNoInput;
-    document.querySelector('.normal-font.ml-2.mr-2.flex.font-normal.justify-center.uppercase.items-center.border-b.border-black.border-dotted').innerText = nameInput;
-    document.getElementById('fatherName').querySelector('span').innerText = fatherName; // Update father's name
-    document.querySelector('.ml-2.text-lg.f-font.border-b.border-black.border-dotted').innerText = dobInput;
-    document.getElementById("selectedDuration").innerHTML = selectedOption;
-
-    // Set font style for father's name and selected duration
-    var commonFontStyles = "font-family: 'Times New Roman', Times, serif; font-size: 16px; font-weight: bold; text-transform: uppercase;";
-    document.getElementById('fatherName').setAttribute('style', commonFontStyles);
-    document.getElementById('selectedDuration').setAttribute('style', commonFontStyles);
-
-    // Automatically update session based on the selected exam held on date
-    if (examSelect.value === 'July 2022') {
-        sessionDropdown.value = '12-07-2022';
-        mankibat.innerText = '12-07-2022';
-    } else if (examSelect.value === 'February 2023') {
-        sessionDropdown.value = '21-02-2023';
-        mankibat.innerText = '21-02-2023';
-    
-    }else if (examSelect.value === 'July 2023') {
-        sessionDropdown.value = '18-07-2023';
-        mankibat.innerText = '18-07-2023';
-    
-    }
-    if (examSelect.value === "July 2023"){
-        addresschangehorhahai.innerText = "G.C.S.M. Near BOI Khanwan, Narhat, Nawada-805122";
-    } else if (examSelect.value === "July 2022") {
-        addresschangehorhahai.innerText = "G.T.C., Prof. Colony, Sahganj, Patna-06";
-    }
-    else if (examSelect.value === "February 2023") {
-        addresschangehorhahai.innerText = "G.T.C., Prof. Colony, Sahganj, Patna-06";
-    }
-}
-
-// Attach event listeners to input fields and select elements to generate QR code dynamically
-document.querySelectorAll('input, select').forEach(item => {
-    item.addEventListener('input', generateQRCode);
-});
-
-// Form submission event handler
-document.getElementById('textInputForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission
-    generateQRCode(); // Update QR code after form submission
-});
-
 </script>
 
                
@@ -415,5 +319,6 @@ document.querySelectorAll('input, select').forEach(item => {
 // Generate initial QR code
 updateQRCode();
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
 </body>
 </html>

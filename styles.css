@@ -15,7 +15,7 @@ body {
 }
 .first-page{
     width: 600px;
-    height: 750px;
+    height: 800px;
     margin: 20px;
     margin-top: 10px;
     justify-items: center;  
@@ -147,6 +147,12 @@ button:disabled {
     height: 155px;
     width: 140px;
     margin-left: 60px; /* Set your desired height here */
+    overflow: hidden;
+}
+#croppedImage{
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
     overflow: hidden;
 }
 #qrcode {
